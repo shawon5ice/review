@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Register | Product Hunt</title>
+{% endblock title %}
+{% block body %}
+<div class="container">
+     <h1>Input data to register in Product Hunt</h1>
+        <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit" class="btn btn-primary">
+    </form>
+</div>
+
+{% endblock body %}

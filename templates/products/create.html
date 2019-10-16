@@ -1,0 +1,32 @@
+{% extends '../base.html' %}
+{% block title %}
+<title>Add product | Product Hunt</title>
+{% endblock title %}
+{% block body %}
+<div class = "body container">
+    {% if error %}
+            {{ error }}
+    {% endif %}
+    <h1 class="text-center">Add Product</h1>
+    <form action=" {% url 'create' %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+        <h4>Title:</h4>
+        <input type="text" class="input-group" name="title">
+        <br>
+        <h4>Body:</h4>
+        <input type=" text " class="input-group" name="body">
+        <br>
+        <h4>Url:</h4>
+        <input type="text" class="input-group" name="url">
+        <br>
+        <h4>Icon:</h4>
+        <input type="file" class="input-group" name="icon">
+        <br>
+        <h4>Image:</h4>
+        <input type="file" class="input-group" name="image">
+        <br>
+        <br>
+        <input type="submit" value="Add Product" class="btn btn-info btn-lg" class="m-2">
+    </form>
+<div>
+{% endblock body %}

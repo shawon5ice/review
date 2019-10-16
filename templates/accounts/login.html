@@ -1,0 +1,24 @@
+{% extends '../base.html' %}
+{% block title %}
+<title>Login | Product Hunt</title>
+{% endblock title %}
+{% block body %}
+<div class = "body container">
+    {% if error %}
+            {{ error }}
+    {% endif %}
+    <h1 class="text-center">Login</h1>
+    <form action=" {% url 'login' %} " method="POST">
+    {% csrf_token %}
+        <h4>Username:</h4>
+        <input type="text" class="input-group" name="username">
+      
+        <br>
+        <h4>Password:</h4>
+        <input type="password" class="input-group" name="password">
+        <br>
+        <br>
+        <input type="submit" value="Login" class="btn btn-outline-info btn-lg" class="m-2">
+    </form>
+<div>
+{% endblock body %}
