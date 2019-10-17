@@ -19,10 +19,9 @@ from django.conf.urls import url,include
 from products import views
 from django.conf import settings
 from django.conf.urls.static import static
-from products.views import signup
+
 urlpatterns = [
-     path('admin/', admin.site.urls),
-     path('', include('products.urls')),
-     path('account/', include('accounts.urls')),
-     #path('signup/', signup, name='signup')
+    path('admin/', admin.site.urls),
+     path('',include('products.urls')),
+     path('account/',include('accounts.urls')),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
